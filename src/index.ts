@@ -2,7 +2,7 @@ import { Elysia } from "elysia";
 
 const app = new Elysia().get("/", () => "Hello, I am practicing Bun and Elysia")
 .get('/post/:id', ({params: {id}}) => {return {id: id, title: 'Learn Bun'}})
-.post('/post', (body) => {return body})
+.post('/post', (context) => {return context})
 .get('/track/*', () => {return 'Track Route'})
 .listen(3000);
 
